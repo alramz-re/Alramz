@@ -742,7 +742,7 @@ var P={
   sultan:{n:'أبو طلال',r:'سلطان الجبر',c:'#d4462a',ab:'كفو 🔥'},
   anoud:{n:'العنود العمرو',r:'التسويق',c:'#7b4bd6'},
   ghaida:{n:'غيداء الغامدي',r:'التواصل الداخلي',c:'#a05a00'},
-  turki:{n:'أبو ميرال',r:'تركي الرفاعي',c:'#2e7d32'},
+  turki:{n:'أبو ميرال',r:'تركي الرفاعي',c:'#2e7d32',ab:'مسؤول الخدمات المساندة'},
   hosam:{n:'حسام القوسي',r:'الموارد البشرية',c:'#6d4c41'},
   faisal:{n:'فيصل الحركان',s:'فيصل الحركان',r:'المشتريات',c:'#00838f',ab:'نطلبها قبل لا أحد يطلبها 😎'},
   ceo:{n:'م. هارون الرشيد',s:'م. هارون',r:'الرئيس التنفيذي',c:'#8b7c6f',ab:'الرمز للعقارات'},
@@ -798,7 +798,7 @@ function ticketSVG(){return '<svg viewBox="0 0 400 400" xmlns="http://www.w3.org
  '<rect x="64" y="68" width="92" height="30" rx="15" fill="#e7f8ee"/><text x="110" y="89" text-anchor="middle" font-size="15" font-weight="700" fill="#1a9b4b">مقفل ✓</text>'+
  '<line x1="64" y1="114" x2="336" y2="114" stroke="#eadfcf" stroke-width="2"/>'+
  '<g font-size="15" fill="#8b7c6f" direction="rtl" text-anchor="start"><text x="336" y="144">المشروع</text><text x="336" y="174">الطلب</text><text x="336" y="204">عن طريق</text></g>'+
- '<g font-size="15" font-weight="600" fill="#2b2b2b" direction="rtl" text-anchor="end"><text x="64" y="144">ستون الملقا</text><text x="64" y="174">تبديل فلتر المكيف</text><text x="64" y="204">تطبيق الرمز</text></g>'+
+ '<g font-size="15" font-weight="600" fill="#2b2b2b" direction="rtl" text-anchor="end"><text x="64" y="144">سديم</text><text x="64" y="174">تبديل فلتر المكيف</text><text x="64" y="204">تطبيق الرمز</text></g>'+
  '<line x1="64" y1="224" x2="336" y2="224" stroke="#eadfcf" stroke-width="2"/>'+
  '<g font-size="15" fill="#2b2b2b" direction="rtl" text-anchor="start"><text x="308" y="254">راحة العملاء استلمت الطلب وحوّلته</text><text x="308" y="282">المشتريات وفّرت القطعة</text><text x="308" y="310">الصيانة بدّلت وجرّبت وقفّلت</text></g>'+
  '<g stroke="#1a9b4b" stroke-width="3.2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M318 249l5 5 10-11M318 277l5 5 10-11M318 305l5 5 10-11"/></g>'+
@@ -877,7 +877,7 @@ var CH=[
   {f:'sultan',t:'واجتماع المثلث الساعة 10، أنا أول واحد يصفق لكم 👏',tm:'8:40 ص'}]},
  {id:'mnt',n:'متابعة الصيانة 🔧',g:1,mem:['abdulsalam','jameel','ibrahim','faisal','dammak','me'],adm:'abdulsalam',desc:'راحة العملاء تستلم طلب العميل وتوصّله للصيانة، والصيانة تعالجه وتقفله هنا.',tm:'8:38 ص',u:12,av:'mnt',m:[
   {s:'اليوم'},{x:'عبدالسلام الزهراني أضافك'},
-  {f:'abdulsalam',t:'صباح الخير 🌿 استلمت طلب صيانة من عميلة في ستون الملقا عن طريق التطبيق: فلتر المكيف يحتاج تبديل. @محمد الجميل الطلب عندكم',tm:'7:20 ص'},
+  {f:'abdulsalam',t:'صباح الخير 🌿 استلمت طلب صيانة من عميلة في سديم عن طريق التطبيق: فلتر المكيف يحتاج تبديل. @محمد الجميل الطلب عندكم',tm:'7:20 ص'},
   {f:'jameel',t:'صباح النور، وصل الطلب ✅ الفني طالع لها الحين',tm:'7:22 ص'},
   {f:'jameel',t:'@فيصل الحركان نحتاج فلتر من نفس المقاس اليوم 🙏',tm:'7:23 ص'},
   {f:'faisal',t:'موجود في المستودع، طلبناه قبل لا أحد يطلبه 😎',tm:'7:25 ص'},
@@ -984,7 +984,7 @@ var NOTES=[
 function noteBody(id){
  var f=S.found;
  if(id==='guide')return guideHTML();
- if(id==='cust')return '<h1>ملاحظات العملاء</h1>- عميل ربوة: يبي يعرف متى يشتغل النادي\n- عميلة ستون الملقا: شكرت فريق الصيانة على سرعتهم 🙏\n- عميل سديم: الصالة فيها شمس الصبح 🌞\n- عميل سديم: صوت المكيف في غرفة النوم عالي شوي <span class="ok">(عند الصيانة، ورجعت للتطوير ✓)</span>\n\n<span class="hl">بُعد التجربة: 9</span>';
+ if(id==='cust')return '<h1>ملاحظات العملاء</h1>- عميل ربوة: يبي يعرف متى يشتغل النادي\n- عميلة سديم: شكرت فريق الصيانة على سرعتهم 🙏\n- عميل سديم: الصالة فيها شمس الصبح 🌞\n- عميل سديم: صوت المكيف في غرفة النوم عالي شوي <span class="ok">(عند الصيانة، ورجعت للتطوير ✓)</span>\n\n<span class="hl">بُعد التجربة: 9</span>';
  if(id==='meet')return '<h1>قبل اجتماع المثلث 🔺</h1>الساعة 10 مع م. هارون الرشيد، ومعي ملاحظات العملاء.\n\n<b>أسأل التطوير</b>\nوش الملاحظة اللي رجعت لكم وغيّرت المخطط؟\n\n<b>أسأل زات</b>\nوش اللي ما يشوفه العميل بس يحس فيه؟\n\n<b>أسأل راحة العملاء</b>\nوش آخر شي قاله عميل؟\n\n<b>وأسأل نفسي</b>\nوش سويت اليوم عشان عميل يرتاح؟';
  if(id==='eoy')return '<h1>قبل نهاية السنة 🤫</h1>- أسأل أبو ميرال وش سمع بالضبط\n- أرشّح أحد؟ لما يفتح الترشيح… إذا فيه ترشيح 👀\n- أجهز شي للحفل؟ (فيه حفل؟)\n- أرتب مكتبي قبل لا يمر أبو رشيد 😅';
  if(id==='ideas')return '<h1>أفكار للحملة</h1>#من_اختيار_الأرض\n- وراء الكواليس: كيف تجتمع أشياء كثيرة وتصير راحة\n- بوست عن تطبيق الرمز وجدول الدفعات\n- فيديو قصير من سديم وقت التسليم\n- صور الجوائز من لندن 🏆';
@@ -1210,17 +1210,19 @@ SCR.phone=function(){var t=S.phTab||'rec',b,flat='<div class="grp plain" style="
   after:function(app){var kp=$('#kpad',app);if(kp)renderPad(kp,function(k){if((S.kp||'').length<12){S.kp=(S.kp||'')+k;$('#kpn').textContent=S.kp}})}}};
 
 /* ---- Calls ---- */
-var LINES=['ألو! هلا والله 👋','لقيت الجوال؟ الله يجزاك خير','صاحبه سفير الراحة… والله ما أدري وينه 😅','اسمع: لا تفتح الملفات… إلا إذا كمّلت المثلث 🔺','واجتماع المثلث الساعة 10، بلّغه إذا شفته 😄','يلا، أنا معك 💪'];
+var CALLERS={
+ sultan:{n:'أبو طلال',dec:'رفضت؟ 😂 عادي، بس افتح «الملفات» إذا كملت المثلث 🔺',lines:['ألو! هلا والله 👋','لقيت الجوال؟ الله يجزاك خير','صاحبه سفير الراحة… والله ما أدري وينه 😅','اسمع: لا تفتح الملفات… إلا إذا كمّلت المثلث 🔺','واجتماع المثلث الساعة 10، بلّغه إذا شفته 😄','يلا، أنا معك 💪']},
+ turki:{n:'أبو ميرال',dec:'مشغول؟ عادي 😄 بس جرّب تطبيق الرمز، تلقاه في الشاشة الرئيسية 📲',lines:['ألو، هلا بسفير الراحة 👋','بشّر، كيف تطبيق الرمز معك؟','العملاء صاروا يحجزون المرافق ويفتحون طلباتهم منه 📲','وطلب الصيانة اللي تقفّل اليوم؟ بدأ من التطبيق 😎','إذا عندك ملاحظة عليه قل لي، نبيه أحسن كل يوم','لحظة… صوتك مو صوته 🤔 مين معي؟','لقيت الجوال؟ طيب جرّب التطبيق وهو معك 😄','تلقاه في الشاشة الرئيسية. يلا في أمان الله 🌿']}};
 function callUI(o){var c=$('#call');c.innerHTML='<div class="cl"><small>'+(o.sub||'جوال')+'</small><h2>'+esc(o.n)+'</h2><small id="cst">'+(o.st||'')+'</small><div class="cap" id="cap"></div>'+(o.incoming?
  '<div class="cl-bot"><div class="cb" data-go="decline"><i class="rd"><svg viewBox="0 0 32 32" fill="#fff"><path d="M16 11c4.6 0 8.8 1.5 11.3 4 .7.7.7 1.8 0 2.5l-2.2 2c-.6.5-1.5.6-2.1.1l-2.6-1.9c-.4-.3-.6-.8-.6-1.3v-2.4c-2.4-.7-5.2-.7-7.6 0v2.4c0 .5-.2 1-.6 1.3L7 19.6c-.6.5-1.5.4-2.1-.1l-2.2-2c-.7-.7-.7-1.8 0-2.5C5.2 12.5 11.4 11 16 11z"/></svg></i>رفض</div><div class="cb" data-go="accept"><i class="gn">'+I.call.replace('stroke="currentColor"','stroke="#fff" fill="#fff"')+'</i>قبول</div></div>':
  '<div class="cl-grid"><div class="cb"><i class="gy">'+I.mic.replace('stroke="currentColor"','stroke="#fff"')+'</i>كتم</div><div class="cb"><i class="gy" style="font-size:26px">⌗</i>لوحة المفاتيح</div><div class="cb"><i class="gy">🔊</i>مكبر الصوت</div></div><div class="cl-bot" style="justify-content:center"><div class="cb" data-go="hangup"><i class="rd"><svg viewBox="0 0 32 32" fill="#fff"><path d="M16 11c4.6 0 8.8 1.5 11.3 4 .7.7.7 1.8 0 2.5l-2.2 2c-.6.5-1.5.6-2.1.1l-2.6-1.9c-.4-.3-.6-.8-.6-1.3v-2.4c-2.4-.7-5.2-.7-7.6 0v2.4c0 .5-.2 1-.6 1.3L7 19.6c-.6.5-1.5.4-2.1-.1l-2.2-2c-.7-.7-.7-1.8 0-2.5C5.2 12.5 11.4 11 16 11z"/></svg></i>إنهاء</div></div>')+'</div>';
  S.prevLayer=S.layer;show('call');$('#hb').style.display='none'}
 function endCall(msg){clearInterval(S.callT);(S.callTO||[]).forEach(clearTimeout);var st=$('#cst');if(st)st.textContent=msg||'انتهت المكالمة';setTimeout(function(){if(S.prevLayer==='app'&&S.stack.length){render(false)}else if(S.unlocked){goHome()}else show('lock')},1100)}
-function talk(){var t0=Date.now();S.callT=setInterval(function(){var s=Math.floor((Date.now()-t0)/1000);var st=$('#cst');if(st)st.textContent='0:'+String(s).padStart(2,'0')},500);S.callTO=[];LINES.forEach(function(l,i){S.callTO.push(setTimeout(function(){var cp=$('#cap');if(cp)cp.innerHTML='<span>'+esc(l)+'</span>'},400+i*2300))});S.callTO.push(setTimeout(function(){endCall()},400+LINES.length*2300+600))}
+function talk(id){var LINES=(CALLERS[id]||CALLERS.sultan).lines;var t0=Date.now();S.callT=setInterval(function(){var s=Math.floor((Date.now()-t0)/1000);var st=$('#cst');if(st)st.textContent='0:'+String(s).padStart(2,'0')},500);S.callTO=[];LINES.forEach(function(l,i){S.callTO.push(setTimeout(function(){var cp=$('#cap');if(cp)cp.innerHTML='<span>'+esc(l)+'</span>'},400+i*2300))});S.callTO.push(setTimeout(function(){endCall()},400+LINES.length*2300+600))}
 function dial(id){var c=CALLS.filter(function(x){return x.id===id})[0]||{n:P[id]?P[id].n:id};callUI({n:c.n,st:'جارٍ الاتصال…'});
- if(id==='sultan'){S.callTO=[setTimeout(function(){S.missed=0;talk()},1800)]}else{S.callTO=[setTimeout(function(){endCall(id==='unknown'?'الرقم مقفل… يمكن عميل يبي يشكرنا 🙂':id==='ceo'?'في اجتماع… وينتظرك فيه 😅':'ما فيه رد')},2600)]}}
+ if(CALLERS[id]){S.callTO=[setTimeout(function(){if(id==='sultan')S.missed=0;talk(id)},1800)]}else{S.callTO=[setTimeout(function(){endCall(id==='unknown'?'الرقم مقفل… يمكن عميل يبي يشكرنا 🙂':id==='ceo'?'في اجتماع… وينتظرك فيه 😅':'ما فيه رد')},2600)]}}
 function buzz(p){try{if(navigator.vibrate)navigator.vibrate(p)}catch(e){}}
-function incoming(){if(S.called||S.layer==='reveal'||S.layer==='call'||$('#fid').classList.contains('on'))return;if(G.on){S.timers.push(setTimeout(incoming,12000));return}S.called=true;buzz([400,200,400,200,400]);callUI({n:'أبو طلال',sub:'جوال',st:'يتصل بك…',incoming:true})}
+function incoming(id){id=CALLERS[id]?id:'sultan';S.rang=S.rang||{};if(S.rang[id]||S.layer==='reveal')return;if(S.layer==='call'||$('#fid').classList.contains('on')||G.on){S.timers.push(setTimeout(function(){incoming(id)},12000));return}S.rang[id]=1;S.caller=id;buzz([400,200,400,200,400]);callUI({n:CALLERS[id].n,sub:'جوال',st:'يتصل بك…',incoming:true})}
 
 /* ---- Photos ---- */
 SCR.photos=function(){var lib=S.photoTab==='lib';var list=PH;
@@ -1521,8 +1523,8 @@ var ACT={
  secret:secret,
  voice:function(id){var t=$('#tr-'+id);if(t)t.hidden=!t.hidden},
  dial:dial,
- accept:function(){$('#call .cl-bot').outerHTML='<div class="cl-grid"><div class="cb"><i class="gy">🔇</i>كتم</div><div class="cb"><i class="gy">⌗</i>لوحة المفاتيح</div><div class="cb"><i class="gy">🔊</i>مكبر الصوت</div></div><div class="cl-bot" style="justify-content:center"><div class="cb" data-go="hangup"><i class="rd" style="font-size:26px;color:#fff">✕</i>إنهاء</div></div>';talk()},
- decline:function(){S.missed++;endCall('تم الرفض');setTimeout(function(){pushMsg('sultan',{f:'sultan',t:'رفضت؟ 😂 عادي، بس افتح «الملفات» إذا كملت المثلث 🔺'})},1500)},
+ accept:function(){$('#call .cl-bot').outerHTML='<div class="cl-grid"><div class="cb"><i class="gy">🔇</i>كتم</div><div class="cb"><i class="gy">⌗</i>لوحة المفاتيح</div><div class="cb"><i class="gy">🔊</i>مكبر الصوت</div></div><div class="cl-bot" style="justify-content:center"><div class="cb" data-go="hangup"><i class="rd" style="font-size:26px;color:#fff">✕</i>إنهاء</div></div>';talk(S.caller)},
+ decline:function(){var id=CALLERS[S.caller]?S.caller:'sultan';if(id==='sultan')S.missed++;endCall('تم الرفض');setTimeout(function(){pushMsg(id,{f:id,t:CALLERS[id].dec})},1500)},
  hangup:function(){endCall()},
  gstart:gStart,
  wfront:function(k){S.wfront=k;rerender()},
@@ -1545,7 +1547,8 @@ function startStory(){
  S.timers.push(setTimeout(function(){var f=S.found;if(S.layer!=='reveal'&&S.layer!=='call'&&S.tag!=='note:guide'&&!(f.d&&f.q&&f.e))banner({app:'notes',t:'دليل الراحة 🔺',b:'في الجوال ملف سري رمزه 3 أرقام. اضغط هنا وابدأ',go:'note:guide',ms:7000})},2500));
  S.timers.push(setTimeout(function(){pushMsg('sultan',{f:'sultan',t:'لقيت الجوال؟ 👀 لا تفتح الملفات… إلا إذا كملت المثلث 🔺'})},14000));
  S.timers.push(setTimeout(function(){pushMsg('mnt',{f:'abdulsalam',t:'العميلة أرسلت شكر للفريق كله 🙏 صيانة ومشتريات وراحة عملاء'})},34000));
- S.timers.push(setTimeout(incoming,55000));
+ S.timers.push(setTimeout(function(){incoming('sultan')},40000));
+ S.timers.push(setTimeout(function(){incoming('turki')},110000));
 }
 
 /* back: device/browser back, Esc on laptop, swipe up on the home bar */
