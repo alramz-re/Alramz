@@ -1212,13 +1212,13 @@ SCR.phone=function(){var t=S.phTab||'rec',b,flat='<div class="grp plain" style="
 /* ---- Calls ---- */
 var CALLERS={
  sultan:{n:'أبو طلال',dec:'رفضت؟ 😂 عادي، بس افتح «الملفات» إذا كملت المثلث 🔺',lines:['ألو! هلا والله 👋','لقيت الجوال؟ الله يجزاك خير','صاحبه سفير الراحة… والله ما أدري وينه 😅','اسمع: لا تفتح الملفات… إلا إذا كمّلت المثلث 🔺','واجتماع المثلث الساعة 10، بلّغه إذا شفته 😄','يلا، أنا معك 💪']},
- turki:{n:'أبو ميرال',dec:'مشغول؟ عادي 😄 بس جرّب تطبيق الرمز، تلقاه في الشاشة الرئيسية 📲',lines:['ألو، هلا بسفير الراحة 👋','بشّر، كيف تطبيق الرمز معك؟','العملاء صاروا يحجزون المرافق ويفتحون طلباتهم منه 📲','وطلب الصيانة اللي تقفّل اليوم؟ بدأ من التطبيق 😎','إذا عندك ملاحظة عليه قل لي، نبيه أحسن كل يوم','لحظة… صوتك مو صوته 🤔 مين معي؟','لقيت الجوال؟ طيب جرّب التطبيق وهو معك 😄','تلقاه في الشاشة الرئيسية. يلا في أمان الله 🌿']}};
+ turki:{n:'أبو ميرال',dec:'مشغول؟ عادي 😄 بس جرّب تطبيق الرمز، تلقاه في الشاشة الرئيسية 📲',pace:3500,lines:['ألو، هلا بسفير الراحة 👋','بشّر، كيف تطبيق الرمز معك؟','العملاء صاروا يحجزون المرافق ويفتحون طلباتهم منه 📲','لحظة… صوتك مو صوته 🤔 مين معي؟','لقيت الجوال؟ جرّب التطبيق وهو معك 😄 يلا في أمان الله 🌿']}};
 function callUI(o){var c=$('#call');c.innerHTML='<div class="cl"><small>'+(o.sub||'جوال')+'</small><h2>'+esc(o.n)+'</h2><small id="cst">'+(o.st||'')+'</small><div class="cap" id="cap"></div>'+(o.incoming?
  '<div class="cl-bot"><div class="cb" data-go="decline"><i class="rd"><svg viewBox="0 0 32 32" fill="#fff"><path d="M16 11c4.6 0 8.8 1.5 11.3 4 .7.7.7 1.8 0 2.5l-2.2 2c-.6.5-1.5.6-2.1.1l-2.6-1.9c-.4-.3-.6-.8-.6-1.3v-2.4c-2.4-.7-5.2-.7-7.6 0v2.4c0 .5-.2 1-.6 1.3L7 19.6c-.6.5-1.5.4-2.1-.1l-2.2-2c-.7-.7-.7-1.8 0-2.5C5.2 12.5 11.4 11 16 11z"/></svg></i>رفض</div><div class="cb" data-go="accept"><i class="gn">'+I.call.replace('stroke="currentColor"','stroke="#fff" fill="#fff"')+'</i>قبول</div></div>':
  '<div class="cl-grid"><div class="cb"><i class="gy">'+I.mic.replace('stroke="currentColor"','stroke="#fff"')+'</i>كتم</div><div class="cb"><i class="gy" style="font-size:26px">⌗</i>لوحة المفاتيح</div><div class="cb"><i class="gy">🔊</i>مكبر الصوت</div></div><div class="cl-bot" style="justify-content:center"><div class="cb" data-go="hangup"><i class="rd"><svg viewBox="0 0 32 32" fill="#fff"><path d="M16 11c4.6 0 8.8 1.5 11.3 4 .7.7.7 1.8 0 2.5l-2.2 2c-.6.5-1.5.6-2.1.1l-2.6-1.9c-.4-.3-.6-.8-.6-1.3v-2.4c-2.4-.7-5.2-.7-7.6 0v2.4c0 .5-.2 1-.6 1.3L7 19.6c-.6.5-1.5.4-2.1-.1l-2.2-2c-.7-.7-.7-1.8 0-2.5C5.2 12.5 11.4 11 16 11z"/></svg></i>إنهاء</div></div>')+'</div>';
  S.prevLayer=S.layer;show('call');$('#hb').style.display='none'}
 function endCall(msg){clearInterval(S.callT);(S.callTO||[]).forEach(clearTimeout);var st=$('#cst');if(st)st.textContent=msg||'انتهت المكالمة';setTimeout(function(){if(S.prevLayer==='app'&&S.stack.length){render(false)}else if(S.unlocked){goHome()}else show('lock')},1100)}
-function talk(id){var LINES=(CALLERS[id]||CALLERS.sultan).lines;var t0=Date.now();S.callT=setInterval(function(){var s=Math.floor((Date.now()-t0)/1000);var st=$('#cst');if(st)st.textContent='0:'+String(s).padStart(2,'0')},500);S.callTO=[];LINES.forEach(function(l,i){S.callTO.push(setTimeout(function(){var cp=$('#cap');if(cp)cp.innerHTML='<span>'+esc(l)+'</span>'},400+i*2300))});S.callTO.push(setTimeout(function(){endCall()},400+LINES.length*2300+600))}
+function talk(id){var C=CALLERS[id]||CALLERS.sultan,LINES=C.lines,PC=C.pace||2300;var t0=Date.now();S.callT=setInterval(function(){var s=Math.floor((Date.now()-t0)/1000);var st=$('#cst');if(st)st.textContent='0:'+String(s).padStart(2,'0')},500);S.callTO=[];LINES.forEach(function(l,i){S.callTO.push(setTimeout(function(){var cp=$('#cap');if(cp)cp.innerHTML='<span>'+esc(l)+'</span>'},400+i*PC))});S.callTO.push(setTimeout(function(){endCall()},400+LINES.length*PC+600))}
 function dial(id){var c=CALLS.filter(function(x){return x.id===id})[0]||{n:P[id]?P[id].n:id};callUI({n:c.n,st:'جارٍ الاتصال…'});
  if(CALLERS[id]){S.callTO=[setTimeout(function(){if(id==='sultan')S.missed=0;talk(id)},1800)]}else{S.callTO=[setTimeout(function(){endCall(id==='unknown'?'الرقم مقفل… يمكن عميل يبي يشكرنا 🙂':id==='ceo'?'في اجتماع… وينتظرك فيه 😅':'ما فيه رد')},2600)]}}
 function buzz(p){try{if(navigator.vibrate)navigator.vibrate(p)}catch(e){}}
@@ -1548,7 +1548,7 @@ function startStory(){
  S.timers.push(setTimeout(function(){pushMsg('sultan',{f:'sultan',t:'لقيت الجوال؟ 👀 لا تفتح الملفات… إلا إذا كملت المثلث 🔺'})},14000));
  S.timers.push(setTimeout(function(){pushMsg('mnt',{f:'abdulsalam',t:'العميلة أرسلت شكر للفريق كله 🙏 صيانة ومشتريات وراحة عملاء'})},34000));
  S.timers.push(setTimeout(function(){incoming('sultan')},40000));
- S.timers.push(setTimeout(function(){incoming('turki')},140000));
+ S.timers.push(setTimeout(function(){incoming('turki')},110000));
 }
 
 /* back: device/browser back, Esc on laptop, swipe up on the home bar */
