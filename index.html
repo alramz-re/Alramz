@@ -41,7 +41,7 @@ img{display:block}
 #screen{position:relative;width:100%;height:100%;border-radius:53px;overflow:hidden;background:#000;direction:rtl;isolation:isolate}
 #island{position:absolute;top:11px;left:50%;transform:translateX(-50%);width:122px;height:35px;border-radius:20px;background:#000;z-index:120;transition:width .35s,height .35s}
 @media (max-width:520px){
-  #stage{background:#000}
+  #stage{background:#000;box-sizing:border-box;padding-bottom:max(env(safe-area-inset-bottom,0px),var(--lift,0px))}
   #stage::after{display:none}
   #phone{width:100%;height:100%;border-radius:0;padding:0;outline:0;transform:none!important}
   #screen{border-radius:0}
@@ -64,7 +64,7 @@ img{display:block}
 #home .wall{background-image:url(img/wall-home.jpg)}
 
 /* home indicator */
-#hb{position:absolute;bottom:0;left:0;right:0;height:34px;z-index:115;display:flex;justify-content:center;align-items:flex-end;padding-bottom:8px;box-sizing:border-box;touch-action:none;cursor:grab;-webkit-user-select:none;user-select:none}
+#hb{position:absolute;bottom:0;left:0;right:0;height:44px;z-index:115;display:flex;justify-content:center;align-items:flex-end;padding-bottom:8px;box-sizing:border-box;touch-action:none;cursor:grab;-webkit-user-select:none;user-select:none}
 #hb.pulse i{animation:hbp 1s ease-in-out 3}
 @keyframes hbp{50%{transform:translateY(-6px)}}
 #edge{position:absolute;top:54px;bottom:34px;right:0;width:16px;z-index:114;touch-action:none;display:none}
@@ -1582,7 +1582,8 @@ function hbTip(){var n=LS.get('hbtip',0);if(n>=2)return;LS.set('hbtip',n+1);setT
 (function(){var y0=null;var lk=$('#lock');lk.addEventListener('pointerdown',function(e){y0=e.clientY});lk.addEventListener('pointerup',function(e){if(y0!==null&&y0-e.clientY>50)unlock();y0=null})})();
 
 /* fit phone on desktop */
-function fit(){var ph=$('#phone');if(innerWidth<=520){ph.style.transform='';return}var s=Math.min(1,(innerHeight-28)/ph.offsetHeight,(innerWidth-28)/ph.offsetWidth);ph.style.transform='scale('+s+')'}
+function lift(){var L=0;try{var sh=Math.max(screen.height,screen.width),touch=('ontouchstart' in window)||navigator.maxTouchPoints>0;if(touch&&innerWidth<=520&&innerHeight>innerWidth&&sh-innerHeight<70)L=34}catch(e){}try{var fl=/[?&]lift=(\d+)/.exec(location.search);if(fl)L=+fl[1]}catch(e){}$('#stage').style.setProperty('--lift',L+'px')}
+function fit(){lift();var ph=$('#phone');if(innerWidth<=520){ph.style.transform='';return}var s=Math.min(1,(innerHeight-28)/ph.offsetHeight,(innerWidth-28)/ph.offsetWidth);ph.style.transform='scale('+s+')'}
 /* sizes follow the real height of the phone screen: 600 is the tightest layout, 748 and up is the full iPhone layout */
 function shortCheck(){var el=$('#screen'),H=el.clientHeight,st=el.style;
  function f(lo,span,a,b){var t=Math.max(lo,Math.min(1,(H-600)/span));return (a+(b-a)*t).toFixed(1)+'px'}
