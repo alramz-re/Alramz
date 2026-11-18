@@ -1599,7 +1599,6 @@ addEventListener('orientationchange',function(){setTimeout(function(){fit();shor
 
 /* init */
 CH.forEach(function(c){if(c.g)c.u=c.m.filter(function(m){return m.f&&m.f!=='me'}).length});
-(function(){var n=LS.get('name','');if(n&&LS.get('done',0)){var l=$('.lost');l.querySelector('b').textContent='هذا جوالك يا '+n;l.querySelector('span').innerHTML='لقيته أخيراً 😄<br>والراحة تبدأ منك.';l.querySelector('small').textContent='سفير الراحة 🔺'}})();
 renderLock();renderPad($('#ppad'),passKey);tick();setInterval(tick,15000);fit();shortCheck();show('lock');
 })();
 </script>
