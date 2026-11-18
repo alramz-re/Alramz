@@ -1342,7 +1342,7 @@ function wallFonts(){if(WF)return WF;var ps=[];try{var A='U+0020,U+00A0,U+0600-0
  [['hm','500',A],['hl','300',A],['sb','500',L]].forEach(function(d){var f=new FontFace('RZ',b64buf(RZF[d[0]]),{weight:d[1],unicodeRange:d[2]});document.fonts.add(f);ps.push(f.load())})}catch(e){ps=[Promise.reject()]}
  WF=Promise.all(ps).then(function(){return 1},function(){return 0});return WF}
 /* share card = pre-designed background (img/wp/<side>.jpg, 1080x1350) + headline, name and dimension drawn in the brand fonts */
-var GRP='منسوبوا شركة الرمز - زات',SHARE_URL='https://hasanjriz-debug.github.io/Alramz/';
+var GRP='منسوبوا شركة الرمز - زات',SHARE_URL='https://alramz-re.github.io/Alramz/';
 function wallRole(side,fem){return (fem?'سفيرة ':'سفير ')+(side==='a'?'الراحة':SIDEN[side])}
 function drawWall(cv,bg,name,side,fem,ok,dept,zat){var W=1080,H=1350,R=540;cv.width=W;cv.height=H;var x=cv.getContext('2d');
  var F=(ok?(zat?'"ZT",':'"RZ",'):'')+'"IBM Plex Sans Arabic",-apple-system,"SF Arabic",system-ui,sans-serif';
